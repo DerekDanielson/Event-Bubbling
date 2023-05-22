@@ -1,37 +1,19 @@
-const form = document.getElementById('item-form');
+// Event Bubbling
+// With bubbling - the event is first captured and handled by the innermost element and then propagated to outer elements.
 
-function onSubmit(e){
-    e.preventDefault();
-    
-    const item = document.getElementById('item-input').value;
-    const priority = document.getElementById('priority-input').value;
-
-    if (item === '' || priority === '0') {
-        alert('Please fill in all fields');
-        return;
-    }
-
-    console.log(item, priority);
-}
-
-function onSubmit2(e){
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    //const item = formData.get('item');
-    //const priority = formData.get('priority');
-
-    const entries = formData.entries();
-
-    for (let entry of entries){
-        console.log(entry[1]);
-    }
+const button = document.querySelector('form button');
+const div = document.querySelector('form div:nth-child(2)');
+const form = document.querySelector('form');
 
 
-    //console.log(item, priority);
-    //console.log(entries);
-}
+button.addEventListener('click', () => {
+    alert('Button was clicked');
+});
 
+div.addEventListener('click', () => {
+    alert('Div was clicked');
+});
 
-form.addEventListener('submit', onSubmit2);
+form.addEventListener('click', () => {
+    alert('Form was clicked');
+});
