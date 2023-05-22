@@ -17,3 +17,7 @@ div.addEventListener('click', () => {
 form.addEventListener('click', () => {
     alert('Form was clicked');
 });
+
+document.body.addEventListener('click', () => {
+    alert('Body was clicked');
+});
