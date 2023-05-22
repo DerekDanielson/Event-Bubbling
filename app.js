@@ -6,8 +6,9 @@ const div = document.querySelector('form div:nth-child(2)');
 const form = document.querySelector('form');
 
 
-button.addEventListener('click', () => {
+button.addEventListener('click', (e) => {
     alert('Button was clicked');
+    e.stopPropagation(); //Stops bubbling
 });
 
 div.addEventListener('click', () => {
